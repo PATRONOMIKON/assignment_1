@@ -14,7 +14,9 @@ function greetUser(name) {
     return `Hello, ${name}!`;
 }
 // Update greetUserArrow below to implement the function shown above. Delete null and then write your arrow function.
-const greetUserArrow = null;
+const greetUserArrow = (name) => {
+    return `Hello, ${name}!`;
+};
 
 
 
@@ -23,7 +25,9 @@ function calculateArea(length, width) {
     return length * width;
 };
 // Update calculateAreaArrow below to implement the function shown above. Delete null and then write your arrow function.
-const calculateAreaArrow = null;
+const calculateAreaArrow = (length, width) => {
+    return length * width;
+};
 
 
 
@@ -32,7 +36,9 @@ function getCurrentTime() {
     return new Date().toLocaleTimeString();
 }
 // Update getCurrentTimeArrow below to implement the function shown above. Delete null and then write your arrow function.
-const getCurrentTimeArrow = null;
+const getCurrentTimeArrow = () => {
+    return new Date().toLocaleTimeString();
+};
 
 
 
@@ -45,7 +51,13 @@ function validatePassword(password) {
     }
 }
 // Update validatePasswordArrow below to implement the function shown above. Delete null and then write your arrow function.
-const validatePasswordArrow = null;
+const validatePasswordArrow = (password) => {
+    if (password.length >= 8) {
+        return "Password is valid";
+    } else {
+        return "Password must be at least 8 characters";
+    }
+};
 
 
 
@@ -57,7 +69,12 @@ function processOrder(item, quantity) {
     return `Order total: ${finalAmount.toFixed(2)}`;
 }
 // Update processOrderArrow below to implement the function shown above. Delete null and then write your arrow function.
-const processOrderArrow = null
+const processOrderArrow = (item, quantity) => {
+    const total = item.price * quantity;
+    const tax = total * 0.08;
+    const finalAmount = total + tax;
+    return `Order total: ${finalAmount.toFixed(2)}`;
+};
 
 
 
@@ -68,55 +85,67 @@ const processOrderArrow = null
 // Exercise 6: Create an arrow function called createFullName that has MULTIPLE parameters
 // createFullName should take a first and last name as arguments and return full name as a single string the format "FIRST LAST"
 
-
-
+const createFullName = (first, last) => {
+    return `${first} ${last}`;
+};
 
 
 
 // Exercise 7: Create an arrow function called calculateVolume that has MULTIPLE parameters
 // calculateVolume should have three arguments (length, width, and height) and return the volume of a rectangular box (length * width * height)
 
-
-
+const calculateVolume = (length, width, height) => {
+    return length * width * height;
+};
 
 
 
 // Exercise 8: Create an arrow function called getFirstElement
 // getFirstElement should take an array as an argument and return the first element in the array
 
-
+const getFirstElement = (array) => {
+    return array[0];
+};
 
 
 
 // Exercise 9: Create an arrow function called makeUppercase
 // makeUppercase should take a string as an argument and return the string in all uppercase (e.g. "hello" becomes "HELLO")
 
-
-
+const makeUppercase = (string) => {
+    return string.toUpperCase();
+};
 
 
 
 // Exercise 10: Create an arrow function called getSquare
 // getSquare should take a number as an argument and return the square of that number
 
-
-
+const getSquare = (number) => {
+    return number * number;
+};
 
 
 
 // Exercise 11: Create an arrow function called checkAge that uses conditional logic
 // checkAge should take an age as an argument and return "Adult" if the age is 18 or larger and "Minor" if the age is under 18
 
-
-
+const checkAge = (age) => {
+    if (age >= 18) {
+        return "Adult";
+    } else {
+        return "Minor";
+    }
+};
 
 
 
 // Exercise 12: Create an arrow function called calculateAverage that returns the average of three numbers
 // calculateAverage should take three test scores as arguments and return the average of these scores
 
-
-
+const calculateAverage = (score1, score2, score3) => {
+    return (score1 + score2 + score3) / 3;
+};
 
 
 
@@ -128,16 +157,27 @@ evaluateScores should take three test scores, find the highest score, and return
     Return "Keep practicing! Top score: [score]" if highest score is below 70 
 */
 
+const evaluateScores = (score1, score2, score3) => {
+    const highestScore = Math.max(score1, score2, score3);
 
-
+    if (highestScore >= 90) {
+        return `Excellent work! Top score: ${highestScore}`;
+    } else if (highestScore >= 70) {
+        return `Good job! Top score: ${highestScore}`;
+    } else {
+        return `Keep practicing! Top score: ${highestScore}`;
+    }
+};
 
 
 
 // Exercise 14: Write an arrow function called calculateSalePrice that calculates the sale price of an item. 
 // calculateSalePrice should take a product name and price as arguments, add a 20% discount, and return formatted string in the format "Product: [name] - Sale Price: $[price with markup]"
 
-
-
+const calculateSalePrice = (name, price) => {
+    const salePrice = price * 0.80;
+    return `Product: ${name} - Sale Price: $${salePrice}`;
+};
 
 
 
